@@ -42,11 +42,11 @@ var navHtml = `<nav class="navbar navbar-expand-lg bg-body-tertiary">
                     </a>
                     <ul class="dropdown-menu">
                       <h6>ASP.net</h6>
-                      <li><a class="dropdown-item" href="http://myserver.kadarcm.com/league">League</a></li>
+                      <li><a class="dropdown-item" href="https://myserver.kadarcm.com/league">League</a></li>
                       <li><hr class="dropdown-divider"></li>
                       <h6>Python</h6>
-                      <li><a class="dropdown-item" href="http://myserver.kadarcm.com/inflation">Inflation App Flask based</a></li>
-                      <li><a class="dropdown-item" href="#">PizzaMan App Django based</a></li>
+                      <li><a class="dropdown-item" href="https://myserver.kadarcm.com/inflation">Inflation App Flask based</a></li>
+                      <li><a class="dropdown-item" href="https://myserver.kadarcm.com/dj/pizzaman/">PizzaMan App Django based</a></li>
                       <li><hr class="dropdown-divider"></li>
                       <h6>React</h6>
                       <li><a class="dropdown-item disabled" href="#">Comming Soon</a></li>

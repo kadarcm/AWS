@@ -15,13 +15,13 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-
-      - uses: youyo/awscredswrap@master
+      - uses: youyo/aws-cdk-github-actions@v2
         with:
-          role_arn: ${{ secrets.IAM_ROLE }}
-          duration_seconds: 3600
-          role_session_name: 'awscredswrap@GitHubActions'
-      - uses: aws-actions/configure-aws-credentials@v1.7.0
-        with:
-          cdk_subcommand: 'deploy --all'
+          # aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          # aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          role-to-assume: ${{ secrets.IAM_ROLE }}
+          aws-region: us-west-2
+          role-session-name: GitHub_to_AWS_via_FederatedOIDC
+      - run: npm install -g aws-cdk
+      - run: cdk deploy --all
 
