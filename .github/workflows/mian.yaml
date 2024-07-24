@@ -7,25 +7,26 @@ permissions:
       id-token: write
       contents: read      
 jobs:
-  lambda1:
+  websites:
     runs-on: ubuntu-latest
 
     steps:
+      - name: checkout
+        uses: actions/checkout@v3
       - name: get node
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v4
+        uses: actions/setup-node@v4
         with:
           node-version: 20
       - name: set credentials
-      - uses: aws-actions/configure-aws-credentials@v1.7.0
+        uses: aws-actions/configure-aws-credentials@v1.7.0
         with:
           # aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           # aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           role-to-assume: ${{ secrets.IAM_ROLE }}
           aws-region: us-west-2
           role-session-name: GitHub_to_AWS_via_FederatedOIDC
-      -name: install cdk
-      - run: npm install -g aws-cdk
-      -name: deploy
-      - run: cdk deploy --all
+      - name: install cdk
+        run: npm install -g aws-cdk
+      - name: deploy
+        run: cdk deploy --all
 
