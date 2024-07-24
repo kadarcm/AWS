@@ -25,5 +25,7 @@ jobs:
       - uses: aws-actions/configure-aws-credentials@v1.7.0
         with:
           cdk_subcommand: 'diff'
+      - uses: aws-actions/configure-aws-credentials@v1.7.0
+        with:
           cdk_subcommand: 'deploy --all'
 
