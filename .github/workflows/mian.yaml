@@ -24,8 +24,10 @@ jobs:
           role-session-name: GitHub_to_AWS_via_FederatedOIDC
       - uses: aws-actions/configure-aws-credentials@v1.7.0
         with:
+          role_arn: ${{ secrets.IAM_ROLE }}
           cdk_subcommand: 'diff'
       - uses: aws-actions/configure-aws-credentials@v1.7.0
         with:
+          role_arn: ${{ secrets.IAM_ROLE }}
           cdk_subcommand: 'deploy --all'
 
