@@ -22,12 +22,12 @@ jobs:
           role-to-assume: ${{ secrets.IAM_ROLE }}
           aws-region: us-west-2
           role-session-name: GitHub_to_AWS_via_FederatedOIDC
-      - uses: aws-actions/configure-aws-credentials@v1.7.0
+      - uses: youyo/awscredswrap@master
         with:
           role_arn: ${{ secrets.IAM_ROLE }}
-          cdk_subcommand: 'diff'
+          duration_seconds: 3600
+          role_session_name: 'awscredswrap@GitHubActions'
       - uses: aws-actions/configure-aws-credentials@v1.7.0
         with:
-          role_arn: ${{ secrets.IAM_ROLE }}
           cdk_subcommand: 'deploy --all'
 
