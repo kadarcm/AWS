@@ -1,0 +1,28 @@
+.league-div{
+    width: 100vw;
+
+    background-image: url("../meda/football.jpg");
+    background-size: 100% 100%;
+    background-color: rgba(255,255,255,0.6);
+    background-blend-mode: lighten;
+
+}
+.webapp-frame{
+    /* border-style: solid;
+    border-color: black;
+    border-width: thick;
+    border: 2; */
+    height: 95%;
+}
+.vspacer {
+    height: 20px;
+
+}
+.inflat-div{
+    width: 100vw;
+    background-image: url("../meda/money.jpg");
+    background-size: 100% 100%;
+    background-color: rgba(255,255,255,0.6);
+    background-blend-mode: lighten;
+
+}

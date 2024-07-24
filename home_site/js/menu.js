@@ -45,7 +45,7 @@ var navHtml = `<nav class="navbar navbar-expand-lg bg-body-tertiary">
                       <li><a class="dropdown-item" href="http://myserver.kadarcm.com/league">League</a></li>
                       <li><hr class="dropdown-divider"></li>
                       <h6>Python</h6>
-                      <li><a class="dropdown-item" href="#">Inflation App Flask based</a></li>
+                      <li><a class="dropdown-item" href="http://myserver.kadarcm.com/inflation">Inflation App Flask based</a></li>
                       <li><a class="dropdown-item" href="#">PizzaMan App Django based</a></li>
                       <li><hr class="dropdown-divider"></li>
                       <h6>React</h6>
@@ -58,8 +58,8 @@ var navHtml = `<nav class="navbar navbar-expand-lg bg-body-tertiary">
                     </a>
                     <ul class="dropdown-menu">
                       <h6>Reporting Server</h6>
-                      <li><a class="dropdown-item" href="#">PowerBi</a></li>
-                      <li><a class="dropdown-item" href="#">SSRS</a></li>
+                      <li><a class="dropdown-item" href="http://myserver.kadarcm.com/bireports">PowerBi</a></li>
+                      <li><a class="dropdown-item" href="http://myserver.kadarcm.com/ssrs">SSRS</a></li>
                       <li><hr class="dropdown-divider"></li>
                       <h6>Embeded in web page</h6>
                       <li><a class="dropdown-item" href="#">PowerBi Portal</a></li>

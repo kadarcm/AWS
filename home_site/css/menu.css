@@ -1,0 +1,14 @@
+h1 {
+text-align: center
+}
+
+.bdy {
+    background-color: #086FA8;
+    width: 100%;
+    margin: 0;
+}
+.logo {
+    /* max-width: 50%; */
+    height: 85px;
+}
+
