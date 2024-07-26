@@ -25,8 +25,9 @@ jobs:
           role-to-assume: ${{ secrets.IAM_ROLE }}
           aws-region: us-west-2
           role-session-name: GitHub_to_AWS_via_FederatedOIDC
+     
+      - run: |
+            npm install -g aws-cdk
+            cdk deploy --all
 
-      - run: npm install -g aws-cdk
-
-      - run: cdk deploy --all
 
