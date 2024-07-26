@@ -17,6 +17,11 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 20
+      - name: get python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.12"
+
       - name: set credentials
         uses: aws-actions/configure-aws-credentials@v1.7.0
         with:
@@ -28,6 +33,7 @@ jobs:
      
       - run: |
             npm install -g aws-cdk
+            pip install -r requirements.txt
             cdk deploy --all
 
 
