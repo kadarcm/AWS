@@ -21,6 +21,9 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: "3.12"
+      - run: |
+            npm install -g aws-cdk
+            pip install -r requirements.txt
 
       - name: set credentials
         uses: aws-actions/configure-aws-credentials@v1.7.0
@@ -31,9 +34,7 @@ jobs:
           aws-region: us-west-2
           role-session-name: GitHub_to_AWS_via_FederatedOIDC
      
-      - run: |
-            npm install -g aws-cdk
-            pip install -r requirements.txt
+      - run:
             cdk deploy --all
 
 
