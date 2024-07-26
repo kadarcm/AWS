@@ -35,6 +35,6 @@ jobs:
           role-session-name: GitHub_to_AWS_via_FederatedOIDC
      
       - run: |
-            cdk deploy --all
+            cdk deploy --all --verbose
 
 
