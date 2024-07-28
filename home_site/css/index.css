@@ -26,3 +26,11 @@
     background-blend-mode: lighten;
 
 }
+.pizza-div{
+    width: 100vw;
+    background-image: url("../meda/pizza.jpeg");
+    background-size: 100% 100%;
+    background-color: rgba(255,255,255,0.6);
+    background-blend-mode: lighten;
+
+}
