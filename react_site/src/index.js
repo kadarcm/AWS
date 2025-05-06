@@ -6,13 +6,18 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Menus from './componates/menus';
 import Calc from './pages/calc';
+import TicTac from './pages/tic_tac';
+import LoginPage from './pages/login';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
   <Routes>
-  <Route path="/stuff/" element={<App />} />
-  <Route path="/calc" element={<Calc />} />
+    <Route path="/tic/" element={<TicTac />} />
+    <Route path="/calc" element={<Calc />} />
+    <Route path="/login" element={<LoginPage />} />
+    <Route path="/" element={<App />} />
+
   </Routes>
    
   </BrowserRouter>

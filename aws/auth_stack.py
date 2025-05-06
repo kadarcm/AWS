@@ -35,7 +35,7 @@ class AuthStack(Stack):
             standard_attributes=cogneto.StandardAttributes(
                 fullname=cogneto.StandardAttribute(mutable=False, required=False),
                 email= cogneto.StandardAttribute(mutable=False, required=True),
-                gender=cogneto.StandardAttribute(mutable=False,required=True)
+                gender=cogneto.StandardAttribute(mutable=False,required=False)
             )
             
         )

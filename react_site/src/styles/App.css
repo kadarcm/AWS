@@ -3,8 +3,14 @@
   background-color: midnightblue;
   height: 100vh;
   display: flex;
+}
 
-  
+.AppTic {
+  text-align: center;
+  background: rgb(40,36,85);
+  background: linear-gradient(96deg, rgba(40,36,85,1) 12%, rgba(137,41,154,1) 49%, rgba(11,25,68,0.9231151933429622) 91%);
+  height: 100vh;
+  display: flex;
 }
 
 .App-logo {

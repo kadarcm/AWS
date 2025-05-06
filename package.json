@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@aws-sdk/client-cognito-identity-provider": "^3.799.0",
     "bootstrap": "^5.3.3",
     "react-bootstrap": "^2.10.4"
   }

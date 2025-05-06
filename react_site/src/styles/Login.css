@@ -1,0 +1,17 @@
+.heading {
+    text-align: center;
+    display: block;
+    padding-top: 10px;
+    background-color:rgb(78, 156, 205);
+    
+
+    
+}
+.username {
+    display: flex;
+    padding: 10px;
+
+}
+.contament {
+    max-width: 500px;
+}

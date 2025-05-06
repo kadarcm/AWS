@@ -34,22 +34,24 @@ export default function TemporaryDrawer() {
             </ListItemButton>
            </a>
         </ListItem>
-        <ListItem key="tictacto" disablePadding >
-            <a href='/stuff/'>
+        <ListItem key="tic Tac Toe" disablePadding >
+            <a href='/tic/'>
             <ListItemButton onClick={console.log("clicked me")}>
               <ListItemIcon> <InboxIcon />  </ListItemIcon>
               <ListItemText primary="tictacto" />
             </ListItemButton>
             </a>
         </ListItem>
-
           <Divider />
-
-
-
+        <ListItem key="Login" disablePadding >
+            <a href='/login/'>
+            <ListItemButton onClick={console.log("clicked me")}>
+              <ListItemIcon> <InboxIcon />  </ListItemIcon>
+              <ListItemText primary="login page" />
+            </ListItemButton>
+            </a>
+        </ListItem>
       </List>
-  
-
     </Box>
   );
 
