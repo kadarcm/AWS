@@ -37,5 +37,5 @@ jobs:
       # - run: |
       #       cdk deploy --all --verbose
       - run: |
-            bash ${GITHUB_WORKSPACE}/github/build.sh
+            bash ${GITHUB_WORKSPACE}/.github/build.sh
 
