@@ -11,9 +11,9 @@ import LoginPage from './pages/login';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <BrowserRouter>
+  <BrowserRouter basename="/react_site">
   <Routes>
-    <Route path="/tic/" element={<TicTac />} />
+    <Route path="/tic" element={<TicTac />} />
     <Route path="/calc" element={<Calc />} />
     <Route path="/login" element={<LoginPage />} />
     <Route path="/" element={<App />} />

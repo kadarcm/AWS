@@ -24,18 +24,19 @@ export default function TemporaryDrawer() {
   };
 
   const DrawerList = (
+    
     <Box sx={{ width: 250 }} role="presentation" onClick={toggleDrawer(false)}>
       <List>
         <ListItem key="calculator" disablePadding >
-            <a href='/calc/'>
+            <a href="calc" >
             <ListItemButton onClick={console.log("clicked me")}>
               <ListItemIcon> <InboxIcon />  </ListItemIcon>
               <ListItemText primary="clac" />
             </ListItemButton>
-           </a>
+            </a>
         </ListItem>
         <ListItem key="tic Tac Toe" disablePadding >
-            <a href='/tic/'>
+            <a href='tic'>
             <ListItemButton onClick={console.log("clicked me")}>
               <ListItemIcon> <InboxIcon />  </ListItemIcon>
               <ListItemText primary="tictacto" />
@@ -44,7 +45,7 @@ export default function TemporaryDrawer() {
         </ListItem>
           <Divider />
         <ListItem key="Login" disablePadding >
-            <a href='/login/'>
+            <a href='login'>
             <ListItemButton onClick={console.log("clicked me")}>
               <ListItemIcon> <InboxIcon />  </ListItemIcon>
               <ListItemText primary="login page" />
