@@ -37,10 +37,10 @@ class WebsiteStack(Stack):
                     
                     )
         # fill that bucket
-        s3d.BucketDeployment(self, "DeployWebsite",
-                    destination_bucket= web_bucket,
-                    sources=[s3d.Source.asset("./home_site")]
-                    )
+        # s3d.BucketDeployment(self, "DeployWebsite",
+        #             destination_bucket= web_bucket,
+        #             sources=[s3d.Source.asset("./home_site")]
+        #             )
               
         # define a cloud front distrobution conected to the bucket we filled with the static site
         web_distrob =cfront.Distribution(self, "distro",
