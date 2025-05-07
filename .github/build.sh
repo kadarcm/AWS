@@ -10,4 +10,4 @@ cd ..
 mkdir -p home_site/react_site
 cp -r react_site/build/* home_site/react_site
 echo "deploying to s3"
-aws s3 sync ./home_site/react_site s3://kadarcm.com --delete
+aws s3 sync ./home_site s3://kadarcm.com --delete
