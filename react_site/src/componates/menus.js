@@ -28,7 +28,7 @@ export default function TemporaryDrawer() {
     <Box sx={{ width: 250 }} role="presentation" onClick={toggleDrawer(false)}>
       <List>
         <ListItem key="calculator" disablePadding >
-            <a href="calc" >
+            <a href="/react_site/calc" >
             <ListItemButton onClick={console.log("clicked me")}>
               <ListItemIcon> <InboxIcon />  </ListItemIcon>
               <ListItemText primary="clac" />
@@ -36,7 +36,7 @@ export default function TemporaryDrawer() {
             </a>
         </ListItem>
         <ListItem key="tic Tac Toe" disablePadding >
-            <a href='tic'>
+            <a href='/react_site/tic'>
             <ListItemButton onClick={console.log("clicked me")}>
               <ListItemIcon> <InboxIcon />  </ListItemIcon>
               <ListItemText primary="tictacto" />
@@ -45,7 +45,7 @@ export default function TemporaryDrawer() {
         </ListItem>
           <Divider />
         <ListItem key="Login" disablePadding >
-            <a href='login'>
+            <a href='/react_site/login'>
             <ListItemButton onClick={console.log("clicked me")}>
               <ListItemIcon> <InboxIcon />  </ListItemIcon>
               <ListItemText primary="login page" />

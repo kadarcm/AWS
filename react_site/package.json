@@ -2,7 +2,8 @@
   "name": "react_site",
   "version": "0.1.0",
   "private": true,
-  "homepage": "/",
+  "homepage": "react_site",
+  "main": "index.js",
   "dependencies": {
     "@aws-sdk/client-cognito-identity-provider": "^3.645.0",
     "@emotion/react": "^11.13.0",
