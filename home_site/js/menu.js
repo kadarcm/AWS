@@ -49,7 +49,7 @@ var navHtml = `<nav class="navbar navbar-expand-lg bg-body-tertiary">
                       <li><a class="dropdown-item" href="https://myserver.kadarcm.com/dj/pizzaman/">PizzaMan App Django based</a></li>
                       <li><hr class="dropdown-divider"></li>
                       <h6>React</h6>
-                      <li><a class="dropdown-item disabled" href="#">Comming Soon</a></li>
+                      <li><a class="dropdown-item disabled" href="./react_site/index.html">Comming Soon</a></li>
                     </ul>
                   </li>
                   <li class="nav-item dropdown">
