@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Link } from "react-router-dom";
+import { BrowserRouter, HashRouter, Link, Navigate, Router } from "react-router-dom";
 import Box from '@mui/material/Box';
 import Drawer from '@mui/material/Drawer';
 import Button from '@mui/material/Button';
@@ -24,36 +24,59 @@ export default function TemporaryDrawer() {
   };
 
   const DrawerList = (
-    
+    <HashRouter   >
+
     <Box sx={{ width: 250 }} role="presentation" onClick={toggleDrawer(false)}>
+      
       <List>
+      <ListItem key="kadarcm Home" disablePadding >
+          <a href="/" >
+            <ListItemButton onClick={console.log("clicked me")}>
+              <ListItemIcon> <InboxIcon />  </ListItemIcon>
+              <ListItemText primary="kadarcm Home" />
+            </ListItemButton>
+          </a> 
+        </ListItem>
+
+      <ListItem key="React Home" disablePadding >
+          <Link to="/" reloadDocument >
+            <ListItemButton onClick={console.log("clicked me")}>
+              <ListItemIcon> <InboxIcon />  </ListItemIcon>
+              <ListItemText primary="React Home" />
+            </ListItemButton>
+          </Link> 
+        </ListItem>
+      <Divider />
         <ListItem key="calculator" disablePadding >
-            <a href="/react_site/calc" >
+          <Link to="/calc/" reloadDocument >
             <ListItemButton onClick={console.log("clicked me")}>
               <ListItemIcon> <InboxIcon />  </ListItemIcon>
               <ListItemText primary="clac" />
             </ListItemButton>
-            </a>
+          </Link> 
         </ListItem>
+
         <ListItem key="tic Tac Toe" disablePadding >
-            <a href='/react_site/tic'>
+        <Link to="/tic/" reloadDocument>
             <ListItemButton onClick={console.log("clicked me")}>
               <ListItemIcon> <InboxIcon />  </ListItemIcon>
               <ListItemText primary="tictacto" />
             </ListItemButton>
-            </a>
+            </Link>
         </ListItem>
           <Divider />
         <ListItem key="Login" disablePadding >
-            <a href='/react_site/login'>
+        <Link to="/login/" reloadDocument>
             <ListItemButton onClick={console.log("clicked me")}>
               <ListItemIcon> <InboxIcon />  </ListItemIcon>
               <ListItemText primary="login page" />
             </ListItemButton>
-            </a>
+            </Link>
         </ListItem>
       </List>
     </Box>
+
+    </HashRouter>
   );
 
   return (
