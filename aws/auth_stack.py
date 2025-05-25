@@ -67,7 +67,7 @@ class AuthStack(Stack):
                 attribute_mapping={
                     "email": cogneto.ProviderAttribute.FACEBOOK_EMAIL,
                     "fullname": cogneto.ProviderAttribute.FACEBOOK_NAME,}
-            )
+            ) 
 
         google_provider = cogneto.UserPoolIdentityProviderGoogle(self, "Google",
                 client_id=os.environ.get("GOOGLE_CLIENT_ID","wrong"),
@@ -79,7 +79,5 @@ class AuthStack(Stack):
                     "fullname": cogneto.ProviderAttribute.GOOGLE_NAME,
                 })
         return [fbook_provider, google_provider]
-
-
 
 
