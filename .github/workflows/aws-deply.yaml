@@ -3,7 +3,7 @@ on:
     branches:
       - main
     paths:
-    - aws
+    - AWS/aws/**
 jobs:
   deploy:
     runs-on: ubuntu-latest
