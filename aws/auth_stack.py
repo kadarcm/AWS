@@ -51,7 +51,7 @@ class AuthStack(Stack):
                                      ))
         self.federated_auth(userpool)
 
-        def federated_auth(self, userpool):
+    def federated_auth(self, userpool):
             userpool.add_facebook_identity_provider(
                 app_id="23884778007828581",
                 app_secret="49354ae892e6129142ba7c9c869af3e6"
