@@ -59,7 +59,7 @@ class AuthStack(Stack):
             userpool.add_google_identity_provider(
                 client_id="467710008277-b88rlp9oqh4rt8i7li3b7q2ugl7dbgmm.apps.googleusercontent.com",
                 client_secret="7JoShrOEZmPjd7ae0xfr3Na1"
-            )
+            ) 
 
 
 
