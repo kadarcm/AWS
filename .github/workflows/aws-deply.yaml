@@ -36,5 +36,5 @@ jobs:
           aws-region: us-east-1
           role-session-name: GitHub_to_AWS_via_FederatedOIDC
      
-          run: |
-              cdk deploy --all --verbose
+      - run: |
+          cdk deploy --all --verbose
