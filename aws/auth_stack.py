@@ -43,14 +43,16 @@ class AuthStack(Stack):
             auth_flows= cogneto.AuthFlow(user_password=True),
             access_token_validity=Duration.minutes(60),
             id_token_validity=Duration.minutes(60),
-            refresh_token_validity=Duration.days(30)
+            refresh_token_validity=Duration.days(30),
+            supported_identity_providers=self.federated_auth(userpool),
         )
+    
         domain = userpool.add_domain("Domain",
                                      cognito_domain=cogneto.CognitoDomainOptions(
                                          domain_prefix="authenticate-here",
                                      ))
        
-        self.federated_auth(userpool)
+        
 
     def federated_auth(self, userpool):
         fbook_provider = cogneto.UserPoolIdentityProviderFacebook(self, "Facebook",
@@ -63,7 +65,7 @@ class AuthStack(Stack):
                     "fullname": cogneto.ProviderAttribute.FACEBOOK_NAME,}
             )
 
-        provider = cogneto.UserPoolIdentityProviderGoogle(self, "Google",
+        google_provider = cogneto.UserPoolIdentityProviderGoogle(self, "Google",
                 client_id="467710008277-b88rlp9oqh4rt8i7li3b7q2ugl7dbgmm.apps.googleusercontent.com",
                 client_secret="7JoShrOEZmPjd7ae0xfr3Na1",
                 user_pool=userpool,
@@ -72,6 +74,7 @@ class AuthStack(Stack):
                     "email": cogneto.ProviderAttribute.GOOGLE_EMAIL,
                     "fullname": cogneto.ProviderAttribute.GOOGLE_NAME,
                 })
+        return [fbook_provider, google_provider]
 
 
 
