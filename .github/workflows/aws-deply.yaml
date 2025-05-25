@@ -1,9 +1,10 @@
+name: Deploying infrastructure
 on:
   push:
     branches:
       - main
     paths:
-    - AWS/aws/**
+    - aws/**
 jobs:
   deploy:
     runs-on: ubuntu-latest

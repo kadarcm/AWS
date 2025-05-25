@@ -5,8 +5,8 @@ on:
     branches:
       - main
     paths:
-      - AWS/home_site/**
-      - AWS/react_site/**
+      - home_site/**
+      - react_site/**
 permissions:
       id-token: write
       contents: read      
