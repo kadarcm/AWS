@@ -44,14 +44,17 @@ class AuthStack(Stack):
             access_token_validity=Duration.minutes(60),
             id_token_validity=Duration.minutes(60),
             refresh_token_validity=Duration.days(30),
-            supported_identity_providers=self.federated_auth(userpool),
+            supported_identity_providers=
+            [cogneto.UserPoolClientIdentityProvider.COGNITO, cogneto.UserPoolClientIdentityProvider.FACEBOOK,
+             cogneto.UserPoolClientIdentityProvider.GOOGLE],
         )
     
         domain = userpool.add_domain("Domain",
                                      cognito_domain=cogneto.CognitoDomainOptions(
                                          domain_prefix="authenticate-here",
                                      ))
-       
+        self.federated_auth(userpool)
+
         
 
     def federated_auth(self, userpool):
