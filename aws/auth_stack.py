@@ -80,4 +80,3 @@ class AuthStack(Stack):
                 })
         return [fbook_provider, google_provider]
 
-
