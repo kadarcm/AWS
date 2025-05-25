@@ -64,30 +64,7 @@
             text-decoration: underline;
         }
     </style>
-
 </head>
 <body>
-    <div class="login-container">
-        <h2>Login</h2>
-        <form action="do_login()" id="userinfo"">
-            <div class="form-group">
-                <label for="username">Username</label>
-                <input type="text" id="username" name="username" required>
-            </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            <button type="submit" class="login-btn">Login</button>
-        </form>
-        <div class="forgot-password">
-            <a href="/forgot-password">Forgot Password?</a>
-        </div>
-    </div>
-    <script src="js/login.js"></script>
-    <script src="https://d3oia8etllorh5.cloudfront.net/20240614193835/js/amazon-cognito-advanced-security-data.min.js"></script>
-    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.1572.0.min.js"></script>
-    <script src="https://unpkg.com/amazon-cognito-identity-js@6.3.7/lib/amazon-cognito-identity.min.js"></script>
-    
+    <iframe src ="https://authenticate-here.auth.us-east-1.amazoncognito.com/login?client_id=4hjs7h3v1b18o33u8656ish8iu&response_type=code&scope=aws.cognito.signin.user.admin+email+openid+phone+profile&redirect_uri=https%3A%2F%2Fkadarcm.com%2Flogin.html" width="100%" height="100%" style="border:none;"></iframe>
 </body>
-</html>
