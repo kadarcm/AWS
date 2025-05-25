@@ -3,7 +3,7 @@ on:
     branches:
       - main
     paths:
-    - ${GITHUB_WORKSPACE}/AWS/aws/**
+    - AWS/aws/**
 jobs:
   deploy:
     runs-on: ubuntu-latest

@@ -1,12 +1,12 @@
-name: Deploying multiple Lambdas
+name: Deploying Websites
 
 on:
   push:
     branches:
       - main
     paths:
-      - ${GITHUB_WORKSPACE}/home_site/**
-      - ${GITHUB_WORKSPACE}/react_site/**
+      - AWS/home_site/**
+      - AWS/react_site/**
 permissions:
       id-token: write
       contents: read      
