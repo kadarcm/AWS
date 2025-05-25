@@ -49,17 +49,30 @@ class AuthStack(Stack):
                                      cognito_domain=cogneto.CognitoDomainOptions(
                                          domain_prefix="authenticate-here",
                                      ))
+       
         self.federated_auth(userpool)
 
     def federated_auth(self, userpool):
-            userpool.add_facebook_identity_provider(
+        fbook_provider = cogneto.UserPoolIdentityProviderFacebook(
                 app_id="23884778007828581",
-                app_secret="49354ae892e6129142ba7c9c869af3e6"
+                app_secret="49354ae892e6129142ba7c9c869af3e6",
+                user_pool=userpool,
+                scopes=["email", "public_profile"],
+                attribute_mapping={
+                    "email": cogneto.ProviderAttribute.FACEBOOK_EMAIL,
+                    "fullname": cogneto.ProviderAttribute.FACEBOOK_NAME,}
             )
-            userpool.add_google_identity_provider(
+
+        provider = cogneto.UserPoolIdentityProviderGoogle(self, "Google",
                 client_id="467710008277-b88rlp9oqh4rt8i7li3b7q2ugl7dbgmm.apps.googleusercontent.com",
-                client_secret="7JoShrOEZmPjd7ae0xfr3Na1"
-            ) 
+                client_secret="7JoShrOEZmPjd7ae0xfr3Na1",
+                user_pool=userpool,
+                scopes=["openid", "email", "profile"],
+                attribute_mapping={
+                    "email": cogneto.ProviderAttribute.GOOGLE_EMAIL,
+                    "fullname": cogneto.ProviderAttribute.GOOGLE_NAME,
+                })
+
 
 
 
