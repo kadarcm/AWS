@@ -60,18 +60,18 @@ class AuthStack(Stack):
 
     def federated_auth(self, userpool):
         fbook_provider = cogneto.UserPoolIdentityProviderFacebook(self, "Facebook",
-                client_id=os.environ.get("FACEBOOK_CLIENT_ID"),
-                client_secret=os.environ.get("FACEBOOK_CLIENT_SECRET"),
+                client_id=os.environ.get("FACEBOOK_CLIENT_ID","wrong"),
+                client_secret=os.environ.get("FACEBOOK_CLIENT_SECRET","wrong"),
                 user_pool=userpool,
                 scopes=["email", "public_profile"],
                 attribute_mapping={
                     "email": cogneto.ProviderAttribute.FACEBOOK_EMAIL,
                     "fullname": cogneto.ProviderAttribute.FACEBOOK_NAME,}
             )
- 
+        os.getenv()
         google_provider = cogneto.UserPoolIdentityProviderGoogle(self, "Google",
-                client_id=os.environ.get("GOOGLE_CLIENT_ID"),
-                client_secret=os.environ.get("GOOGLE_CLIENT_SECRET"),
+                client_id=os.environ.get("GOOGLE_CLIENT_ID","wrong"),
+                client_secret=os.environ.get("GOOGLE_CLIENT_SECRET","wrong"),
                 user_pool=userpool,
                 scopes=["openid", "email", "profile"],
                 attribute_mapping={
