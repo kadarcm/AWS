@@ -79,4 +79,3 @@ class AuthStack(Stack):
                     "fullname": cogneto.ProviderAttribute.GOOGLE_NAME,
                 })
         return [fbook_provider, google_provider]
-
