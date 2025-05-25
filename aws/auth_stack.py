@@ -68,7 +68,7 @@ class AuthStack(Stack):
                     "email": cogneto.ProviderAttribute.FACEBOOK_EMAIL,
                     "fullname": cogneto.ProviderAttribute.FACEBOOK_NAME,}
             )
-        os.getenv()
+
         google_provider = cogneto.UserPoolIdentityProviderGoogle(self, "Google",
                 client_id=os.environ.get("GOOGLE_CLIENT_ID","wrong"),
                 client_secret=os.environ.get("GOOGLE_CLIENT_SECRET","wrong"),
