@@ -53,9 +53,9 @@ class AuthStack(Stack):
         self.federated_auth(userpool)
 
     def federated_auth(self, userpool):
-        fbook_provider = cogneto.UserPoolIdentityProviderFacebook(
-                app_id="23884778007828581",
-                app_secret="49354ae892e6129142ba7c9c869af3e6",
+        fbook_provider = cogneto.UserPoolIdentityProviderFacebook(self, "Facebook",
+                client_id="23884778007828581",
+                client_secret="49354ae892e6129142ba7c9c869af3e6",
                 user_pool=userpool,
                 scopes=["email", "public_profile"],
                 attribute_mapping={
