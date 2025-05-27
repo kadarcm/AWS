@@ -5,11 +5,18 @@ import {useState} from 'react'
 import { Grid } from '@mui/material';
 import { Button } from '@mui/material';
 
+let Xes = [];
+let Oes = [];
+const winingCombos = [
+    [0,1,2],  [3,4,5],  [6,7,8],  [0,3,6],  [1,4,7],  [2,5,8],  [0,4,8],  [2,4,6]];
+
 export default function TicTac(props){
 
     const [gameBoard, setGameBoard] = useState(["X", " ", " ", "O", " ", " ", " ", " ", " "])
     const [refresh, setRefresh] = useState(false)
     const [gameOver, setGameOver] = useState(false)
+
+
     function playMove(event){
         if (gameOver) {
             alert("Game Over! Please start a new game.");
@@ -19,6 +26,8 @@ export default function TicTac(props){
         if (gameBoard[idx] ==" "){
             let gmbd = gameBoard;
             gmbd[idx]='X';
+            Xes.push(idx);
+            console.log("xes" ,Xes);
             setGameBoard(gmbd);
             if (checkWinner()) {
                 return; // Exit if the game is over after the player's move
@@ -31,7 +40,7 @@ export default function TicTac(props){
                 }
             }
             
-            gmbd[openSpots[Math.floor(Math.random() * openSpots.length)]]='O';
+            gmbd[OsTurn(gmbd)]='O';
             checkWinner();
             console.log(openSpots)
             console.log(gmbd);
@@ -40,10 +49,50 @@ export default function TicTac(props){
         }
     }   
     }
+    function OsTurn(gmbd){
+        
+        for (let i = 0; i < winingCombos.length; i++) {
+            // o blockes X
+            let count = 0.0;
+            let nextmove =0;
+            for (let j = 0; j < 3; j++) {
+                if (gmbd[winingCombos[i][j]]=="X"){count ++;}
+                if (gmbd[winingCombos[i][j]]=="O"){count --;}
+                if (gmbd[winingCombos[i][j]]==" "){
+                    count = count +.5;
+                    nextmove = winingCombos[i][j];
+                }
+                
+            }
+            console.log(winingCombos[i], "count", count)
+            if(count ==2.5){
+                // X is about to win
+                console.log("x is about to win", nextmove)
+                return nextmove
+                
+            }
+        }
+        // o picks at random
+        let openSpots =[]
+        for (let val in gmbd){
+            if(gmbd[val]==" "){
+                openSpots.push(val);
+            }
+        }
+        return openSpots[Math.floor(Math.random() * openSpots.length)]
+
+        
+        
+    }
+        
+
+    
     function resetGame(){
         setGameBoard([" ", " ", " ", " ", " ", " ", " ", " ", " ",])
         setRefresh(!refresh)
         setGameOver(false);
+        Xes = [];
+        Oes = [];
     }
     function checkWinner(){
         let XSpots =[]
@@ -58,15 +107,7 @@ export default function TicTac(props){
              }
         }
         
-        const winingCombos = [
-            [0,1,2],
-            [3,4,5],
-            [6,7,8],
-            [0,3,6],
-            [1,4,7],
-            [2,5,8],
-            [0,4,8],
-            [2,4,6]];
+
     
         for (let i = 0; i < winingCombos.length; i++) 
         {
